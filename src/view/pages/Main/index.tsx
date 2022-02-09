@@ -20,6 +20,8 @@ const Main: FC = () => {
             <Nav>
                 <Link to = 'register'>Registation</Link>
                 <Link to = '/items'>Items</Link>
+                <Link to = '/js'>JavaScript</Link>
+                <Link to = '/ReactRedux'>ReactRedux</Link>
             </Nav>
             <Breadcrumbs>
                 <Crumb to = '/'>
