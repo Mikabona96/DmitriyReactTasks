@@ -16,17 +16,10 @@ type PropTypes = {
 export const JavaScript: FC<PropTypes> = () => {
     return (
         <S.Container>
-            JavaScript Lessons
-            <Link to = '/js/1'>Task #1</Link>
-            <Link to = '/js/1'>Task #2</Link>
-            <Link to = '/js/1'>Task #3</Link>
-            <Link to = '/js/1'>Task #4</Link>
-            <Link to = '/js/1'>Task #5</Link>
-            <Link to = '/js/1'>Task #6</Link>
-            <Link to = '/js/1'>Task #7</Link>
-            <Link to = '/js/1'>Task #8</Link>
-            <Link to = '/js/1'>Task #9</Link>
-            <Link to = '/js/1'>Task #10</Link>
+            <S.LinkWrapper>
+                JavaScript Lessons
+                <Link to = '/js/lesson2'>Lesson #2</Link>
+            </S.LinkWrapper>
             <Outlet />
         </S.Container>
     );
