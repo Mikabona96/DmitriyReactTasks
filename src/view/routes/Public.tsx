@@ -28,6 +28,8 @@ import { Lesson3 } from '../components/JavaScript/Lesson3';
 // Pages
 import { Main, Register, Items, Item } from '../pages';
 import Js from '../pages/Js';
+import { LessonOneTwo } from '../components/RRComp/Lesson1-2';
+import ReactRedux from '../pages/ReactRedux';
 
 
 export const Public: FC = () => {
@@ -82,6 +84,16 @@ export const Public: FC = () => {
                         { path: '7', element: <Task21 /> },
                         { path: '8', element: <Task22 /> },
                     ],
+                },
+            ],
+        },
+        {
+            path:     '/react-redux',
+            element:  <ReactRedux />,
+            children: [
+                {
+                    path:    'lesson1-2',
+                    element: <LessonOneTwo />,
                 },
             ],
         },

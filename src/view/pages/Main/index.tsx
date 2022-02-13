@@ -21,7 +21,7 @@ const Main: FC = () => {
                 <Link to = 'register'>Registation</Link>
                 <Link to = '/items'>Items</Link>
                 <Link to = '/js'>JavaScript</Link>
-                <Link to = '/ReactRedux'>ReactRedux</Link>
+                <Link to = '/react-redux'>ReactRedux</Link>
             </Nav>
             <Breadcrumbs>
                 <Crumb to = '/'>
