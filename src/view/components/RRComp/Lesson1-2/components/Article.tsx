@@ -2,39 +2,44 @@ import React, { FC } from 'react';
 import { CommentsCounter } from '../elements/CommentsCounter';
 import { LikesCounter } from '../elements/LikesCounter';
 import { Tag } from '../elements/Tag';
-import * as S from '../styles';
-import source from '../source.json';
+import { ArticleStyled } from '../styles';
+import moment from 'moment';
 
-export const Article: FC = () => {
-    const arr = source;
 
+type PropTypes = {
+    title: string;
+    description: string;
+    published: string;
+    likes: number;
+    comments: number;
+    image: string;
+    tags: string[];
+}
+
+
+export const Article: FC<PropTypes> = (props) => {
     return (
-        arr.map((article: any, i: number) => {
-            return (
-                <S.ArticleStyled key = { i }>
-                    <header>
-                        <div className = 'poster'>
-                            <img
-                                alt = ''
-                                src = 'https://miro.medium.com/max/1280/1*N6eYi8bOQ9tyZy8NGWDNKA.png'
-                            />
-                        </div>
-                        <Tag />
-                    </header>
-                    <article>
-                        <h1>American writer of bad cowboy stories arrived in</h1>
-                        <p>Volunteering to help people in need combined with travelling to faraway places is a new </p>
-                    </article>
-                    <footer>
-                        <span>15.07.2017</span>
-                        <div className = 'controls'>
-                            <CommentsCounter source = { source }/>
-                            <LikesCounter />
-                        </div>
-                    </footer>
-                </S.ArticleStyled>
-            );
-        })
-
+        <ArticleStyled className = 'article'>
+            <header>
+                <div className = 'poster'>
+                    <img
+                        alt = ''
+                        src = { props.image }
+                    />
+                </div>
+                <Tag tags = { props.tags }/>
+            </header>
+            <article>
+                <h1>{props.title}</h1>
+                <p>{props.description}</p>
+            </article>
+            <footer>
+                <span>{moment(props.published).format('YY.MM.DD')}</span>
+                <div className = 'controls'>
+                    <CommentsCounter comments = { props.comments }/>
+                    <LikesCounter likes = { props.likes } />
+                </div>
+            </footer>
+        </ArticleStyled>
     );
 };

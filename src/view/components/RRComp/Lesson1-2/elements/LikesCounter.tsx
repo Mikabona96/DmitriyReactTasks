@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 
 const LikesCounterStyled = styled.span`
@@ -14,8 +14,19 @@ const LikesCounterStyled = styled.span`
     }
 `;
 
-export const LikesCounter: FC = () => {
+type PropTypes = {
+    likes: number
+}
+
+export const LikesCounter: FC<PropTypes> = (props) => {
+    const [ likesCount, setLikesCount ] = useState(props.likes);
+
     return (
-        <LikesCounterStyled>315</LikesCounterStyled>
+        <LikesCounterStyled
+            onClick = {
+                () => likesCount === props.likes
+                    ? setLikesCount((prev) => prev + 1)
+                    : setLikesCount(props.likes) }>{likesCount}
+        </LikesCounterStyled>
     );
 };

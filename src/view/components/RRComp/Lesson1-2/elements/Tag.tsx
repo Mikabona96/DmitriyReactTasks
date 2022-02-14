@@ -26,16 +26,22 @@ const TagsStyled = styled.div`
     }
 `;
 
+type PropTypes = {
+    tags: Array<string>
+}
 
-export const Tag: FC = () => {
+export const Tag: FC<PropTypes> = ({ tags }) => {
     return (
         <TagsStyled>
-            <div>
-                <span className = 'tag'>Literature</span>
-            </div>
-            <div>
-                <span className = 'tag'>Books</span>
-            </div>
+            {
+                tags.map((item) => {
+                    return (
+                        <div key = { item }>
+                            <span className = 'tag'>{item}</span>
+                        </div>
+                    );
+                })
+            }
         </TagsStyled>
     );
 };

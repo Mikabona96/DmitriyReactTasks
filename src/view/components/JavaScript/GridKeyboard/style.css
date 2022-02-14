@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.en-keyboard-layout {
+    width: 800px;
+}
+
+.firt-row,
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row {
+    display: grid;
+    width: 100%;
+}
+
+.first-row,
+.second-row {
+    display: grid;
+    grid-template: 30px / repeat(10, 1fr);
+}
+
+.third-row {
+    grid-template: 30px / repeat(9, 1fr);
+}
+.fourth-row {
+    grid-template: 30px / repeat(8, 1fr) 15%;
+}
+
+.fifth-row {
+    grid-template: 30px / repeat(2, 1fr) 3fr repeat(2, 1fr);
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(59, 58, 58);
+    border-radius: 5px;
+}
