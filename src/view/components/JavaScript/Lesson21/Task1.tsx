@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { FC } from 'react';
 type Obj = {
     name: string,
@@ -34,8 +35,27 @@ export const Task1: FC = () => {
         .catch((error) => console.log(error)); // Customer is not verified
 
     return (
-        <h1>
+        <div>
             Task 1 result in console
-        </h1>
+            <br />
+            # Задача 1
+            <br />
+            Создайте функцию `isCustomerVerified` которая умеет проверять объект `customer` на валидность.
+            <br />
+            Валидным объект `customer` считается только в том случае когда у него установлен флаг `verified: true`.
+            <br />
+            Обратите внимание**:
+            <br />
+            1. Функция `isCustomerVerified` должна возвращать промис;
+            <br />
+            2. Использование `async & await` **запрещено**;
+            <br />
+            3. Использование посторонних библиотек **запрещено**;
+            <br />
+            4. В том случае если объект валидный промис резолвится с одним параметром, аргументом для которого будет `true`;
+            <br />
+            5. В том случае если объект невалидный промис реджектится с текстом `Customer is not verified`.
+
+        </div>
     );
 };

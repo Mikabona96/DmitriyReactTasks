@@ -54,12 +54,11 @@ customers.add({ name: 'John' });
 customers.add({ name: 'Ivan', verified: true });
 
 
-for (const customer of customers) {
-    console.log(customer);
-}
-
-
 export const Task1: FC = () => {
+    for (const customer of customers) {
+        console.log(customer);
+    }
+
     // // В консоли будет
     // // { name: 'Andrii', verified: true }
     // // { name: 'Marco', verified: true }
@@ -68,7 +67,7 @@ export const Task1: FC = () => {
 
     return (
         <h1>
-            Task 1 result in console need to fix
+            Task 1 result in console
         </h1>
     );
 };

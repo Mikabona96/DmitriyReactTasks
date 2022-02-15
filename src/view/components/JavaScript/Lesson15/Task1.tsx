@@ -5,14 +5,15 @@ export const Task1: FC = () => {
     //     console.log('Hello!');
     // }
     // // eslint-disable-next-line no-extend-native
-    // Object.prototype.delay = function(t) {
+    // sayHello.prototype.delay = function(t: number): Function {
+    //     // eslint-disable-next-line react/no-this-in-sfc
     //     if (this.length === 0) {
     //         setTimeout(() => {
     //             return this();
     //         }, t);
     //     }
 
-    //     return (...rest) => {
+    //     return (...rest: number[]) => {
     //         setTimeout(() => {
     //             return this(...rest);
     //         }, t);
