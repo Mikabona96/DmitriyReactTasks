@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { FC } from 'react';
 
 export const Task11: FC = () => {
@@ -11,8 +12,14 @@ export const Task11: FC = () => {
 
 
     return (
-        <h1>
-            Task 11 result in console
-        </h1>
+        <div>
+            <h3>Component: Task 11</h3>
+            <div>
+                С помощью цикла `for` и оператора `if` выведите на экран столбец элементов, которые больше 3-х, но меньше 10.
+                <p>
+                    Результат проверки выводиться в консоли. Решение находиться в теле этого компонента.
+                </p>
+            </div>
+        </div>
     );
 };

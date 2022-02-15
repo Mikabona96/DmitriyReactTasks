@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { FC } from 'react';
 
 export const Task1: FC = () => {
@@ -18,8 +19,13 @@ export const Task1: FC = () => {
     console.log(person.salary);
 
     return (
-        <h1>
-            Task 1 result in console
-        </h1>
+        <div>
+            <h1>Задача 1.</h1>
+            <div>
+                Создайте объект `person` у которого будет одно свойство `salary`.
+                * При чтении этого свойства должна возвращаться строка с текстом.
+                * Если до конца месяца осталось больше чем 20 дней — возвращается строка `good salary`, а если нет — `bad salary`
+            </div>
+        </div>
     );
 };

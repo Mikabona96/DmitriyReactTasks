@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Task1 } from '../Lesson3/Task1';
 import { Task2 } from '../Lesson3/Task2';
+import { Task3 } from '../Lesson3/Task3';
 import { Task4 } from '../Lesson3/Task4';
 import { Task5 } from '../Lesson3/Task5';
 import { Task6 } from '../Lesson3/Task6';
@@ -17,6 +18,8 @@ export const Task: FC = () => {
             return <Task1 />;
         case '/js/lesson3/2':
             return <Task2 />;
+        case '/js/lesson3/3':
+            return <Task3 />;
         case '/js/lesson3/4':
             return <Task4 />;
         case '/js/lesson3/5':

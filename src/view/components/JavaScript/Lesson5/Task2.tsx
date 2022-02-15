@@ -13,8 +13,17 @@ export const Task2: FC = () => {
     console.log(checkSpam('pitterxxx@gmail.com', 'XXX')); // true
 
     return (
-        <h1>
-            Task 2 result in console
-        </h1>
+        <div>
+            <h1>Задача 2.</h1>
+            <div>
+                Напишите функцию checkSpam(source, example)
+                Функция возвращает true, если строка source содержит подстроку spam. Иначе — false.
+
+                Условия:
+                - Функция принимает два параметра;
+                - Функция содержит валидацию входных параметров на тип string.
+                - Функция должна быть нечувствительна к регистру:
+            </div>
+        </div>
     );
 };

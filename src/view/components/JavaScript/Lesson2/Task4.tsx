@@ -18,8 +18,16 @@ export const Task4: FC = () => {
     }
 
     return (
-        <h1>
-            Task 4 result in console
-        </h1>
+        <div>
+            <h1>
+                Task 4 result in console
+            </h1>
+            <div>
+                Перепишите код с использованием одной конструкции `switch`
+                <p>
+                    Результат проверки выводиться в консоли. Решение находиться в теле этого компонента.
+                </p>
+            </div>
+        </div>
     );
 };

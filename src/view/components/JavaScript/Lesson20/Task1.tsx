@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { FC } from 'react';
 type Obj = {
     name: string
@@ -66,9 +67,24 @@ export const Task1: FC = () => {
     // // { name: 'Ivan', verified: true }
 
     return (
-        <h1>
-            Task 1 result in console
-        </h1>
+        <div>
+            <h1>
+                Task 1 result in console
+            </h1>
+
+
+            Создайте класс `Customers` который умеет работать с механизмом `for of`.
+
+            Класс `Customers` содержит метод `add` который принимает объект в качестве параметра. У этого объекта есть обязательное поле `name` и необязательное поле `verified`.
+
+            Класс `Customers` при переборе с помощью `for of` должен учитывать только объекты у которых был установлен флаг `verified: true`.
+
+            **Обратите внимание**:
+
+            1. Использование генераторов **запрещено**.
+            2. Использование посторонних библиотек **запрещено**
+            3. У класса `Customers` **должен** быть метод `Symbol.iterator`
+        </div>
     );
 };
 

@@ -1,40 +1,39 @@
+/* eslint-disable max-len */
+/* eslint-disable no-undefined */
 import React, { FC } from 'react';
 
 export const Task2: FC = () => {
-    const person = {};
+    const person = {
+        rate: 0,
+        salary(): number {
+            // eslint-disable-next-line react/no-this-in-sfc
+            if (this.rate === undefined) {
+                return 0;
+            }
 
-    // Решение
-
-    Object.defineProperties(person, {
-        rate: {
-            value:        2,
-            writable:     true,
-            configurable: false,
-            enumerable:   false,
+            // eslint-disable-next-line react/no-this-in-sfc
+            return this.rate * new Date().getDate();
         },
-
-        salary: {
-            get() {
-                const currentDay = new Date().getDate();
-
-                // eslint-disable-next-line react/no-this-in-sfc
-                return this.rate * currentDay;
-            },
-        },
-
+    };
+    Object.defineProperty(person, 'rate', {
+        configurable: false,
+        enumerable:   false,
+        writable:     true,
     });
-
-
-    // person.rate = 30;
-
-    // // Предположим что сегодня 10 января, в этом случае это свойство возвращает число 300
-    // person.salary;
+    person.rate = 30;
+    console.log(person.salary());
 
     console.log(person);
 
     return (
-        <h1>
-            Task 2 result in console
-        </h1>
+        <div>
+            <h1>Задача 2.</h1>
+            <div>Создайте объект `person` у которого будет 2 свойства: `rate` и `salary`.
+                Свойство `rate` можно читать и записывать, но нельзя удалять, а также это свойство не должно участвовать в перечислении всех свойств при переборе.
+                Свойство `salary` можно читать, но нельзя менять.
+                При чтении свойства `salary` возвращает результат умножения поля `rate` на текущее число в месяце.
+                Если rate не установлен — возвращаем число 0.
+            </div>
+        </div>
     );
 };

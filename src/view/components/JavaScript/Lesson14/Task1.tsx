@@ -49,7 +49,7 @@ class CleanerRobot {
         this.resultEnergy = '';
     }
 
-    timerId: any = 0;
+    timerId: void | ReturnType<typeof setTimeout> = void 0;
     ENERGY_CONSUMPTION = 1; /* Расход энергии: 1% батареи на 1 час работы. */
     CLEANING_SPEED = 10; /* Скорость уборки: 10 квадратных метров в час. */
     getCleaningTime = () => this.cleaningSquare / this.CLEANING_SPEED;
@@ -67,7 +67,9 @@ class CleanerRobot {
     }
 
     stop() {
-        clearTimeout(this.timerId);
+        if (typeof this.timerId === 'number') {
+            clearTimeout(this.timerId);
+        }
         console.log(`Уборка завершена досрочно. Осталось заряда батареи: ${this.resultEnergy}.`);
     }
 }
@@ -79,9 +81,26 @@ export const Task1: FC = () => {
     cleanerRb.clean(); /* Начинаю процесс уборки. Время уборки: 4.5 часов. */
 
     return (
-        <h1>
-            Task 1 result in console made on classes any on line 52
-        </h1>
+        <div>
+            <h1>Задача 1.</h1>
+            <div>
+                * Дан базовый класс робота-уборщика.
+                *
+                * Добавьте роботу функционал употребления энергии:
+                * - при начале уборки уровень энергии должен уменьшиться;
+                * - в расчёте использовать внутренний коэффициент ENERGY_CONSUMPTION.
+                *
+                * Затем добавьте роботу публичный метод stop() для остановки процесса уборки.
+                * В если уборка остановлена раньше времени завершения,
+                * onReady сработать не должен, а также нужно вывести другое сообщение.
+                *
+                * Условия:
+                * - заданную форму конструктора включая его параметры менять нельзя — можно только дополнять;
+                * - использовать функцию clearTimeout;
+                * - идентификатор таймера нужно хранить в приватной переменной конструктора.
+                */
+            </div>
+        </div>
     );
 };
 

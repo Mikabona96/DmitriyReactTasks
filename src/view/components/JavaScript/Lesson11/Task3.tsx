@@ -30,9 +30,20 @@ export const Task3: FC = () => {
     console.log(generator1.print()); // 2
 
     return (
-        <h1>
-            Task 3 result in console need to fix
-        </h1>
+        <div>
+            <h1>Задача 3.</h1>
+            <div>
+                * Улучшите функцию createFibonacciGenerator() из предыдущего примера.
+                *
+                * Теперь вызов функции createFibonacciGenerator() должен возвращать объект, который содержит два метода:
+                * - print — возвращает число из последовательности Фибоначчи;
+                * - reset — обнуляет последовательность и ничего не возвращает.
+                *
+                * Условия:
+                * - Задачу нужно решить с помощью замыкания.
+                */
+            </div>
+        </div>
     );
 };
 

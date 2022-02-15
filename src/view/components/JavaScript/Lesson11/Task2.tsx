@@ -23,8 +23,17 @@ export const Task2: FC = () => {
     console.log(generateFibonacciNumber()); // 13
 
     return (
-        <h1>
-            Task 2 result in console
-        </h1>
+        <div>
+            <h1>Задача 2.</h1>
+            <div>
+                * Создайте функцию createFibonacciGenerator(),
+                * которая вернёт ещё одну функцию,
+                * каждый вызов которой будет возвращать число из последовательности Фибоначчи.
+                *
+                * Условия:
+                * - Задачу нужно решить с помощью замыкания.
+                */
+            </div>
+        </div>
     );
 };

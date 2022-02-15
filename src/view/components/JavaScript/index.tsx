@@ -36,7 +36,9 @@ export const JavaScript: FC<PropTypes> = () => {
                 <Link to = '/js/lesson20'>Lesson #20</Link>
                 <Link to = '/js/lesson21'>Lesson #21</Link>
             </S.LinkWrapper>
-            <Outlet />
+            <S.Output>
+                <Outlet />
+            </S.Output>
         </S.Container>
     );
 };

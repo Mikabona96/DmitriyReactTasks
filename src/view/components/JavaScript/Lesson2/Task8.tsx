@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { FC } from 'react';
 
 export const Task8: FC = () => {
@@ -15,8 +16,14 @@ export const Task8: FC = () => {
 
 
     return (
-        <h1>
-            Task 8 result in console
-        </h1>
+        <div>
+            <h3>Component: Task 8</h3>
+            <div>
+                Напишите код, который посчитает сумму всех парных элементов в массиве. В суммировании участвуют только элементы больше 3.
+                <p>
+                    Результат проверки выводиться в консоли. Решение находиться в теле этого компонента.
+                </p>
+            </div>
+        </div>
     );
 };

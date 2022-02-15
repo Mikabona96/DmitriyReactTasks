@@ -48,9 +48,16 @@ export const Task2: FC = () => {
 
 
     return (
-        <h1>
-            Task 2 result in console
-        </h1>
+        <div>
+            <h1>
+                Task 2 result in console
+            </h1>
+            Улучшите класс `Customers` добавив функцию генератор.
+
+            Обратите внимание:
+
+            1. Класс `Customers` после этого должен работать **идентично** предыдущей задаче.
+        </div>
     );
 };
 

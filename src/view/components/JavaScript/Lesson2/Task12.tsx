@@ -13,8 +13,14 @@ export const Task12: FC = () => {
     console.log(sum);
 
     return (
-        <h1>
-            Task 12 result in console
-        </h1>
+        <div>
+            <h3>Component: Task 12</h3>
+            <div>
+                Найдите сумму положительных элементов массива.
+                <p>
+                    Результат проверки выводиться в консоли. Решение находиться в теле этого компонента.
+                </p>
+            </div>
+        </div>
     );
 };

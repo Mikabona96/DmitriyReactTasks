@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { FC } from 'react';
 
 
@@ -7,8 +8,8 @@ class Countries {
         this.url = url;
     }
 
-    send(num: number) {
-        if (typeof num !== 'number') {
+    send(size: number) {
+        if (typeof size !== 'number') {
             throw new Error('Send method must have a typeof number parameter');
         }
 
@@ -17,7 +18,7 @@ class Countries {
                 throw new TypeError('Url must be a string');
             }
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
-            const res = await fetch(url);
+            const res = await fetch(`${url}?_page=0&_limit=${size}`);
             if (res.status === 200) {
                 resolve(res.json());
             }
@@ -42,8 +43,26 @@ export const Task4: FC = () => {
     })();
 
     return (
-        <h1>
-            Task 4 result in console
-        </h1>
+        <div>
+            <h1>Задача 4.</h1>
+            <div>
+                Создайте класс `Countries` который при создании своего экземпляра принимает один параметр в с типом строка. Этот параметр будет служить API эндпоинтом.
+
+                У класса `Countries` должен быть один метод `send` который должен возвращать промис.
+
+                А принимает метод `send` один параметр который должен быть по типу `number` и который потом будет использоваться как значение для `GET` query-параметра `size`.
+
+                **Обратите внимание**:
+
+                1. Метод `send` должен возвращать промис.
+                2. Использование `async & await` внутри класса **запрещено**.
+                3. Использование посторонних библиотек кроме библиотеки `fetch` **запрещено**
+                4. Если сервер ответил статус кодом `200` промис **должен** возвращать массив который содержит список объектов-стран.
+                5. В том случае если сервер ответил статус кодом не `200` промис **должен** генерировать ошибку с текстом `We have error, status code: ${'statusCode'}`
+                6. Генерировать ошибку если `url` по типу не строка.
+                7. Генерировать ошибку если методу `send` передать по типу не число.
+
+            </div>
+        </div>
     );
 };

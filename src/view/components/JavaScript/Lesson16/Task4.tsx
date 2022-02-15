@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { FC } from 'react';
 
 class Stringer {
@@ -22,8 +23,19 @@ export const Task4: FC = () => {
     console.log(stringer.uppercaseAll('good morning!')); // Good Morning!
 
     return (
-        <h1>
-            Task 4 result in console
-        </h1>
+        <div>
+            <h1>Задача 4.</h1>
+            <div>
+                * Реализуйте класс Stringer, который будет иметь следующие методы (каждый принимает строку в качестве аргумента):
+                *
+                * - reverse(string) — возвращает строку в перевернутом виде;
+                * - uppercaseFirst(string) — возвращает строку, сделав ее первую букву заглавной;
+                * - uppercaseAll(string) — делает заглавной первую букву каждого слова строки и возвращает её.
+                *
+                * Условия:
+                * - Реализация решения — это синтаксис современных классов JavaScript.
+                */
+            </div>
+        </div>
     );
 };
