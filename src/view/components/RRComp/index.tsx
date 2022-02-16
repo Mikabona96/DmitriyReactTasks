@@ -16,6 +16,7 @@ export const RRComp: FC<PropTypes> = () => {
     return (
         <S.Container>
             <Link to = '/react-redux/lesson1-2'>Lesson 1-2</Link>
+            <Link to = '/react-redux/lesson5'>Lesson 5</Link>
             <Outlet />
         </S.Container>
     );

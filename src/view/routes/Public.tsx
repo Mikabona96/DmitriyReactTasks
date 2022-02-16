@@ -7,6 +7,7 @@ import { useRoutes, Navigate } from 'react-router-dom';
 import { Main, Register, Items, Item } from '../pages';
 import Js from '../pages/Js';
 import { LessonOneTwo } from '../components/RRComp/Lesson1-2';
+import { LessonFive } from '../components/RRComp/Lesson5';
 import ReactRedux from '../pages/ReactRedux';
 
 import { Lesson2 } from '../components/JavaScript/Lesson2';
@@ -157,6 +158,10 @@ export const Public: FC = () => {
                 {
                     path:    'lesson1-2',
                     element: <LessonOneTwo />,
+                },
+                {
+                    path:    'lesson5',
+                    element: <LessonFive />,
                 },
             ],
         },
