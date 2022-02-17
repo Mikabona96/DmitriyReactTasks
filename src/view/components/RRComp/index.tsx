@@ -20,6 +20,7 @@ export const RRComp: FC<PropTypes> = () => {
                 <Link to = '/react-redux/lesson1-2'>Lesson 1-2</Link>
                 <Link to = '/react-redux/lesson3'>Lesson 3</Link>
                 <Link to = '/react-redux/lesson5'>Lesson 5</Link>
+                <Link to = '/react-redux/lesson6'>Lesson 6</Link>
             </LinkWrapper>
             <Outlet />
         </Container>

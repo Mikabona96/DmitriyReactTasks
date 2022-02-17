@@ -1,5 +1,5 @@
-/* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable max-len */
 import React, { FC } from 'react';
 
 type Obj = {
@@ -8,6 +8,15 @@ type Obj = {
     country: string,
     salary: number
 }
+
+type Users = Map<string, {
+    name: string,
+    age: number,
+    country: string,
+    salary: number,
+    id?: string,
+    info?: {age: number}
+}>
 
 type Query = {
     country: string,
@@ -19,28 +28,12 @@ type Query = {
         max: number
     }
 }
-
 class DB {
     id: string
-    user: Map<string, {
-        name: string,
-        age: number,
-        country: string,
-        salary: number,
-        id?: string,
-        info?: {age: number}
-    }> | null | any
-
-    users: Map<string, {
-        name: string,
-        age: number,
-        country: string,
-        salary: number
-    }>
+    users: Users
 
     constructor() {
-        this.id = 'jjj';
-        this.user = null;
+        this.id = '';
         this.users = new Map();
     }
 
@@ -61,8 +54,8 @@ class DB {
             throw new TypeError('Salary must be a number');
         }
         this.id = String((Math.random() * 10000) + Math.round(Math.random() * 10000));
-        const person = new Map();
-        this.user = person.set(this.id, obj);
+
+        this.users.set(this.id, { ...obj, id: this.id });
 
         return this.id;
     }
@@ -79,14 +72,7 @@ class DB {
         }
 
         // Current User
-        const user = { ...this.user?.get(this.id), id: this.id };
-        const person = new Map();
-        this.user = person.set(this.id, user);
-
-        // Map
-        this.users.set(this.id, this.user.get(this.id));
-
-        return this.user.get(this.id);
+        return this.users.get(id) ? this.users.get(id) : null;
     }
 
     readAll() {
@@ -108,15 +94,11 @@ class DB {
             throw new TypeError('Age argument must be an object');
         }
 
-        const user = this.user?.get(this.id);
+        const user = this.users?.get(this.id);
         if (user) {
             user.info = ageObj;
+            this.users.set(this.id, { ...user });
         }
-        const person = new Map();
-        this.user = person.set(this.id, user);
-
-        //Map
-        this.users.set(this.id, this.user.get(this.id));
 
         return this.users;
     }
@@ -128,9 +110,9 @@ class DB {
         if (id !== this.id) {
             throw new Error('This Id doesn\'t exist');
         }
-        this.user.delete(id);
+        this.users.delete(id);
 
-        return this.user;
+        return this.users;
     }
 
     find(query: Query) {
@@ -157,6 +139,7 @@ class DB {
     }
 }
 
+
 const db = new DB();
 
 const person = {
@@ -176,13 +159,13 @@ const id = db.create(person);
 const customer = db.read(id);
 const customers = db.readAll(); // массив пользователей
 const upd = db.update(id, { age: 22 }); // id
-const del = db.delete(id); // true
+// const del = db.delete(id); // true
 
 const id2 = db.create(person2);
 const customer2 = db.read(id2);
 const customers2 = db.readAll(); // массив пользователей
 const upd2 = db.update(id2, { age: 25 }); // id
-const del2 = db.delete(id2); // true
+// const del2 = db.delete(id2); // true
 
 
 const query = {

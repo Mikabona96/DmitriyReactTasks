@@ -9,6 +9,7 @@ import Js from '../pages/Js';
 import { LessonOneTwo } from '../components/RRComp/Lesson1-2';
 import { LessonThree } from '../components/RRComp/Lesson3';
 import { LessonFive } from '../components/RRComp/Lesson5';
+import { LessonSix } from '../components/RRComp/Lesson6';
 import ReactRedux from '../pages/ReactRedux';
 
 import { Lesson2 } from '../components/JavaScript/Lesson2';
@@ -165,6 +166,10 @@ export const Public: FC = () => {
                         {
                             path:    'lesson5',
                             element: <LessonFive />,
+                        },
+                        {
+                            path:    'lesson6',
+                            element: <LessonSix />,
                         },
                     ],
                 },
