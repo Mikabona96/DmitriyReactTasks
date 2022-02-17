@@ -17,7 +17,6 @@ export const JavaScript: FC<PropTypes> = () => {
     return (
         <S.Container>
             <S.LinkWrapper>
-                JavaScript Lessons
                 <Link to = '/js/grid-keyboard'>Grid Keyboard</Link>
                 <Link to = '/js/lesson2'>Lesson #2</Link>
                 <Link to = '/js/lesson3'>Lesson #3</Link>

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Formik, Field } from 'formik';
 import * as yup from 'yup';
+const regex = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
 export const StudentRegistration: FC = () => {
     const validationsSchema = yup.object({
         firstName: yup.string().typeError('firstname shold be a string')
@@ -9,7 +10,9 @@ export const StudentRegistration: FC = () => {
             .required('surname is required'),
         age: yup.number().min(6)
             .max(60),
-        email: yup.string().email('enter valid email')
+        email: yup.string()
+            .email('enter valid email')
+            .matches(regex, 'enter valid email')
             .required('email is requiured'),
         sex: yup.string().typeError('sex should be a string')
             .required('sex is requiured'),

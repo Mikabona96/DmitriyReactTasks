@@ -162,3 +162,10 @@ export const AccordionStyled = styled.section`
   }
 }
 `;
+export const Response = styled.div`
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+`;

@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
+import { Response } from './styles';
 import { Accordion } from './components/Accordion';
 import { News } from './components/News';
 import source from './source.json';
+
 const data = [
     {
         question: 'What is your name?',
@@ -19,11 +21,11 @@ const data = [
 
 export const LessonOneTwo: FC = () => {
     return (
-        <div>
+        <Response>
             <News
                 array = { source }
             />
             <Accordion array = { data } />
-        </div>
+        </Response>
     );
 };
