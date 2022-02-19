@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Core
 import React, { FC } from 'react';
 import { Link, Outlet } from 'react-router-dom';
@@ -21,6 +22,7 @@ export const RRComp: FC<PropTypes> = () => {
                 <Link to = '/react-redux/lesson3'>Lesson 3</Link>
                 <Link to = '/react-redux/lesson5'>Lesson 5</Link>
                 <Link to = '/react-redux/lesson6'>Lesson 6</Link>
+                <Link to = '/react-redux/lesson7'>Lesson 7</Link>
             </LinkWrapper>
             <Outlet />
         </Container>

@@ -10,6 +10,7 @@ import { LessonOneTwo } from '../components/RRComp/Lesson1-2';
 import { LessonThree } from '../components/RRComp/Lesson3';
 import { LessonFive } from '../components/RRComp/Lesson5';
 import { LessonSix } from '../components/RRComp/Lesson6';
+import { LessonSeven } from '../components/RRComp/Lesson7';
 import ReactRedux from '../pages/ReactRedux';
 
 import { Lesson2 } from '../components/JavaScript/Lesson2';
@@ -46,6 +47,7 @@ import { Task as Task17 } from '../components/JavaScript/Lesson17/Task';
 import { Task as Task18 } from '../components/JavaScript/Lesson18/Task';
 import { Task as Task20 } from '../components/JavaScript/Lesson20/Task';
 import { Task as Task21 } from '../components/JavaScript/Lesson21/Task';
+import { Person } from '../../bus/people/components';
 
 
 export const Public: FC = () => {
@@ -170,6 +172,11 @@ export const Public: FC = () => {
                         {
                             path:    'lesson6',
                             element: <LessonSix />,
+                        },
+                        {
+                            path:     'lesson7',
+                            element:  <LessonSeven />,
+                            children: [{ path: ':id', element: <Person /> }],
                         },
                     ],
                 },
