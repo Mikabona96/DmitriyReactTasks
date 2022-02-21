@@ -23,4 +23,11 @@ export const api = Object.freeze({
             });
         },
     },
+    films: {
+        fetch: ()=>{
+            return fetch(`${root}/films`, {
+                method: 'GET',
+            });
+        },
+    },
 });

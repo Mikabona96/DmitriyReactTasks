@@ -49,6 +49,8 @@ import { Task as Task20 } from '../components/JavaScript/Lesson20/Task';
 import { Task as Task21 } from '../components/JavaScript/Lesson21/Task';
 import { Person } from '../../bus/people/components';
 import { People } from '../../bus/people';
+import { Films } from '../../bus/films';
+import { Film } from '../../bus/films/components';
 
 
 export const Public: FC = () => {
@@ -181,6 +183,10 @@ export const Public: FC = () => {
                                 {
                                     path:     'people', element:  <People />,
                                     children: [{ path: ':id', element: <Person /> }],
+                                },
+                                {
+                                    path:     'films', element:  <Films />,
+                                    children: [{ path: ':id', element: <Film /> }],
                                 },
                             ],
                         },

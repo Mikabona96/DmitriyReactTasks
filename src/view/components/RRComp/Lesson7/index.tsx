@@ -6,6 +6,7 @@ export const LessonSeven: FC = () => {
         <div>
             <LinkWrapper>
                 <Link to = '/react-redux/lesson7/people'>People</Link>
+                <Link to = '/react-redux/lesson7/films'>Films</Link>
             </LinkWrapper>
             <Outlet />
         </div>
