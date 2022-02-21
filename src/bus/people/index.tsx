@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { usePeopleFetch } from './hooks/usePeopleFetch';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { PeopleSection, PeoplePopup } from './styles';
+import { PeopleSection, PeoplePopup, ListJSX } from './styles';
 import { useDispatch } from 'react-redux';
 import { peopleActions } from './actions';
 
@@ -29,20 +29,19 @@ export const People: FC = (): any=>{
             const id =  person.url.match(idRegExp)[ 1 ];
 
             return (
-                <li
+                <ListJSX
                     key = { String(index) }
                     onClick = { () => {
                         dispatch(peopleActions.setCurrentPerson(person));
                         navigate(`/react-redux/lesson7/${id}`);
                     } }>{person.name}
-                </li>
+                </ListJSX>
             );
         });
 
         return (
             <PeopleSection>
                 <div>
-                    <h1>People:</h1>
                     {spinnerJSX}
                     {listJSX}
                 </div>

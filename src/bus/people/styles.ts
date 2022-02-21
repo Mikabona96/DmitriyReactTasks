@@ -24,3 +24,13 @@ export const PersonImage = styled.img`
 export const ListGroup = styled.li`
 padding: .25rem;
 `;
+
+export const ListJSX = styled.div`
+width: 200px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    &:hover {
+        cursor: pointer;
+    }
+`;
