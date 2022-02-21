@@ -1,9 +1,13 @@
 import React, { FC } from 'react';
-import { People } from '../../../../bus/people';
+import { Link, Outlet } from 'react-router-dom';
+import { LinkWrapper } from '../../JavaScript/styles';
 export const LessonSeven: FC = () => {
     return (
         <div>
-            <People />
+            <LinkWrapper>
+                <Link to = '/react-redux/lesson7/people'>People</Link>
+            </LinkWrapper>
+            <Outlet />
         </div>
     );
 };

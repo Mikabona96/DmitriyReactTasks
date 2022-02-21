@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { FC } from 'react';
-import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { usePersonFetch } from '../hooks/usePersonFetch';
 import { PersonDetails, PersonImage, ListGroup } from '../styles';
 
 
@@ -10,11 +10,9 @@ export const Person: FC = (): any=>{
     const idRegExp = /\/([0-9]*)\/$/;
     const path: any =  location.pathname + '/';
     const id = path.match(idRegExp)[ 1 ];
-    const currentPerson = useSelector((state: any) => state.peopleReducer.currentPerson);
+    const person = usePersonFetch(id);
 
-    if (currentPerson) {
-        const { name, gender, birth_year, eye_color } = currentPerson;
-
+    if (person) {
         return (
             <PersonDetails>
                 <PersonImage
@@ -23,23 +21,27 @@ export const Person: FC = (): any=>{
                 />
 
                 <div>
-                    <h4>{name}</h4>
+                    <h4>{person.name}</h4>
                     <ul>
                         <ListGroup>
                             <span className = 'term'>Gender:</span>
-                            <span>{gender}</span>
+                            <span>{person.gender}</span>
                         </ListGroup>
                         <ListGroup>
                             <span className = 'term'>Birth Year:</span>
-                            <span>{birth_year}</span>
+                            <span>{person.birth_year}</span>
                         </ListGroup>
                         <ListGroup>
                             <span className = 'term'>Eye Color:</span>
-                            <span>{eye_color}</span>
+                            <span>{person.eye_color}</span>
                         </ListGroup>
                     </ul>
                 </div>
             </PersonDetails>
         );
     }
+
+    return (
+        <div>Something went wrong</div>
+    );
 };

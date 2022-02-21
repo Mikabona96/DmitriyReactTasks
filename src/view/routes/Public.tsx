@@ -48,6 +48,7 @@ import { Task as Task18 } from '../components/JavaScript/Lesson18/Task';
 import { Task as Task20 } from '../components/JavaScript/Lesson20/Task';
 import { Task as Task21 } from '../components/JavaScript/Lesson21/Task';
 import { Person } from '../../bus/people/components';
+import { People } from '../../bus/people';
 
 
 export const Public: FC = () => {
@@ -176,7 +177,12 @@ export const Public: FC = () => {
                         {
                             path:     'lesson7',
                             element:  <LessonSeven />,
-                            children: [{ path: ':id', element: <Person /> }],
+                            children: [
+                                {
+                                    path:     'people', element:  <People />,
+                                    children: [{ path: ':id', element: <Person /> }],
+                                },
+                            ],
                         },
                     ],
                 },
