@@ -33,7 +33,7 @@ export const Films: FC = (): any=>{
                     key = { String(index) }
                     onClick = { () => {
                         dispatch(filmsActions.setCurrentFilm(film));
-                        navigate(`/react-redux/lesson7/films/${id}`);
+                        navigate(`/lesson7/films/${id}`);
                     } }>{film.title}
                 </ListJSX>
             );

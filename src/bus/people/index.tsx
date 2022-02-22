@@ -33,7 +33,7 @@ export const People: FC = (): any=>{
                     key = { String(index) }
                     onClick = { () => {
                         dispatch(peopleActions.setCurrentPerson(person));
-                        navigate(`/react-redux/lesson7/people/${id}`);
+                        navigate(`/lesson7/people/${id}`);
                     } }>{person.name}
                 </ListJSX>
             );

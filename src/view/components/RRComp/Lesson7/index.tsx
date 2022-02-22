@@ -1,14 +1,29 @@
 import React, { FC } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { LinkWrapper } from '../../JavaScript/styles';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { Button } from '../../../pages/ReactRedux/styles';
+
+
+const Padding = styled.div`
+    padding: 20px;
+    margin-top: 50px;
+`;
 export const LessonSeven: FC = () => {
+    const navigate = useNavigate();
+
     return (
-        <div>
-            <LinkWrapper>
-                <Link to = '/react-redux/lesson7/people'>People</Link>
-                <Link to = '/react-redux/lesson7/films'>Films</Link>
-            </LinkWrapper>
-            <Outlet />
-        </div>
+        <>
+            <Padding>
+                <div>
+                    <Link to = '/lesson7/people'>People</Link>
+                    <Link to = '/lesson7/films'>Films</Link>
+                </div>
+                <Outlet />
+            </Padding>
+            <Button onClick = { () => {
+                navigate(-1);
+            } }>&#129092;
+            </Button>
+        </>
     );
 };
