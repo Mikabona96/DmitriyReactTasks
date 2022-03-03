@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fill ahould return Object {type: PEOPLE_FILL, payload} 1`] = `
+Object {
+  "payload": "er",
+  "type": "PEOPLE_FILL",
+}
+`;
+
+exports[`setCurrentPerson ahould return {type: PEOPLE_START_FETCHING, payload} 1`] = `
+Object {
+  "payload": "er",
+  "type": "PEOPLE_SET_CURRENT_PERSON",
+}
+`;
+
+exports[`setFetchingError ahould return {type: PEOPLE_START_FETCHING} 1`] = `
+Object {
+  "error": true,
+  "payload": 404,
+  "type": "PEOPLE_SET_FETCHING_ERROR",
+}
+`;
+
+exports[`startFetching ahould return Object {type: PEOPLE_START_FETCHING} 1`] = `
+Object {
+  "type": "PEOPLE_START_FETCHING",
+}
+`;
+
+exports[`stopFetching ahould return Object {type: PEOPLE_STOP_FETCHING} 1`] = `
+Object {
+  "type": "PEOPLE_STOP_FETCHING",
+}
+`;
